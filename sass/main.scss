@@ -9,17 +9,25 @@
 
 :root {
     --white: #ffffff;
+    --bg-color: #0f0e17;
 }
-
+@mixin background($border: none){
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    border: $border;
+}
 body {
-    background-color: #0f0e17;
+    background-color:var(--bg-color);
 }
 
 .container {
+    height: 100vh;
     header {
         display: flex;
         justify-content: space-between;
         padding: 1rem 3rem;
+
         h1 {
             color: var(--white);
         }
@@ -27,7 +35,7 @@ body {
         nav {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1rem;
 
             .local_time {
                 color: var(--white);
@@ -36,12 +44,10 @@ body {
             .input_container {
                 position: relative;
                 input {
+                    @include background();
                     outline: none;
                     border: none;
                     font-size: 1rem;
-                    background: rgba(255, 255, 255, 0.15);
-                    backdrop-filter: blur(2.5px);
-                    -webkit-backdrop-filter: blur(2.5px);
                     border-radius: 4px;
                     font-size: 1.1rem;
                     padding: 0.5rem 2rem 0.5rem 1rem;
@@ -53,6 +59,59 @@ body {
                     top: 20%;
                 }
             }   
+            .user_profile{
+                height: 2.3rem;
+                width: 2.3rem;
+                border-radius: 50%;
+
+                .image_profile{
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+    main{
+        display: flex;
+        justify-content: center;
+        .cards{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            .card{
+                @include background($border: 1px solid rgba( 255, 255, 255, 0.18 ));
+                height: 10rem;
+                width: 30rem;
+                flex: 1 1 150px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                padding: 1rem;
+                
+               .image_card{
+                height: 7rem;
+                width: 6rem;
+                object-fit: cover;
+               }
+               .info{
+                color: var(--white);
+                margin-left: 3rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.3rem;
+
+                h2{
+                    font-weight: 600;
+                    letter-spacing: 4px;
+                }
+                .popularity{
+                    color:rgba(255, 255, 255, 0.34);
+                }
+               }
+            }
         }
     }
 }
