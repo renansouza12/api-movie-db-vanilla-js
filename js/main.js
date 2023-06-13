@@ -8,6 +8,7 @@ async function getMovies(){
     const data = await response.json();
     return data;
 }
+
 window.onload = async function(){
     const movies = await getMovies();
     const {results} = movies;
@@ -23,8 +24,11 @@ window.onload = async function(){
                 <h2>${title}</h2>
                 <span class="popularity">${formatNumber(popularity)} Views</span>
             </div>
-      </div>
+        </div>
+       
         `
+
+   
     })
 }
 
