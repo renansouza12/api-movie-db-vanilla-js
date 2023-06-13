@@ -27,6 +27,7 @@ body {
         display: flex;
         justify-content: space-between;
         padding: 1rem 3rem;
+        position: relative;
 
         h1 {
             color: var(--white);
@@ -73,14 +74,26 @@ body {
             }
         }
     }
+    header::after{
+        position: absolute;
+        content: '';
+        bottom: -13px;
+        height: 1.5rem;
+        width: 90%;
+        background-color:var(--bg-color);
+        filter: blur(3px);
+        z-index: 1;
+    }
     main{
         display: flex;
         justify-content: center;
+
         .cards{
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1rem;
+
             .card{
                 @include background($border: 1px solid rgba( 255, 255, 255, 0.18 ));
                 height: 10rem;
@@ -90,11 +103,14 @@ body {
                 display: flex;
                 align-items: center;
                 padding: 1rem;
-                
-               .image_card{
+                transition: 0.5s ease-in-out;
+                position: relative;
+
+               .image_card{ 
                 height: 7rem;
                 width: 6rem;
                 object-fit: cover;
+
                }
                .info{
                 color: var(--white);
@@ -112,6 +128,35 @@ body {
                 }
                }
             }
+            .card::after{
+                position: absolute;
+                content: "";
+                height: 4rem;
+                width: 0.5rem;
+                border-radius: 1rem;
+                opacity: 0;
+                left: -5px;
+                background-color: var(--white);
+                transition: 0.5s ease-in;
+                z-index: 1;
+            }
+            .card:hover{
+                scale: 1.1;
+            }
+            .card:hover::after{
+                opacity: 1;
+                
+            }
         }
+    }
+    main:after{
+        position: absolute;
+        content: '';
+        bottom: -10px;
+        height: 1.5rem;
+        width: 90%;
+        background-color:var(--bg-color);
+        filter: blur(3px);
+        z-index: 1;   
     }
 }
