@@ -82,12 +82,13 @@ body {
         width: 90%;
         background-color:var(--bg-color);
         filter: blur(3px);
-        z-index: 1;
+        
     }
     main{
+        height: 90vh;
         display: flex;
         justify-content: center;
-        
+        overflow: hidden;
         .cards{
             display: flex;
             flex-direction: column;
@@ -153,8 +154,8 @@ body {
     main:after{
         position: absolute;
         content: '';
-        bottom: -10px;
-        height: 1.5rem;
+        bottom: 0px;
+        height: 3rem;
         width: 90%;
         background-color:var(--bg-color);
         filter: blur(3px);
