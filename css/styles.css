@@ -153,7 +153,7 @@ body {
 .container main:after {
   position: absolute;
   content: "";
-  bottom: -10px;
+  bottom: -16px;
   height: 2rem;
   width: 90%;
   background-color: var(--bg-color);

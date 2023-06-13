@@ -27,8 +27,6 @@ window.onload = async function(){
         </div>
        
         `
-
-   
     })
 }
 
