@@ -27,6 +27,7 @@ body {
 }
 .container header h1 {
   color: var(--white);
+  cursor: pointer;
 }
 .container header nav {
   display: flex;
@@ -56,6 +57,7 @@ body {
   position: absolute;
   right: 3%;
   top: 20%;
+  cursor: pointer;
 }
 .container header nav .user_profile {
   height: 2.3rem;
@@ -101,7 +103,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.18);
   height: 10rem;
   width: 30rem;
-  flex: 1 1 150px;
   position: relative;
   display: flex;
   align-items: center;
@@ -126,6 +127,7 @@ body {
 .container main .cards .card .info h2 {
   font-weight: 600;
   letter-spacing: 4px;
+  text-shadow: 0 0px 8px var(--white);
 }
 .container main .cards .card .info .popularity {
   color: rgba(255, 255, 255, 0.34);
@@ -146,6 +148,17 @@ body {
 }
 .container main .cards .card:hover::after {
   opacity: 1;
+}
+.container main .erro {
+  display: none;
+}
+.container main .erro h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+  font-size: 2rem;
 }
 .container main::-webkit-scrollbar {
   width: 0px;

@@ -10,17 +10,16 @@
   <body>
     <div class="container">
       <header>
-        <h1>Movies</h1>
+        <h1 class="mainTitle">Movies</h1>
         <nav>
           <span class="local_time">12:00</span>
-          <div class="input_container">
-            <input type="text" placeholder="Search movie...">
+          <form class="input_container">
+            <input class="input_movie" type="text" placeholder="Search movie...">
             <svg class="search_icon" width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="#8A8A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M19.35 20.35L15 16" stroke="#8A8A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              
-          </div>
+            </form>
           <div class="user_profile">
             <img class="image_profile" src="https://media.discordapp.net/attachments/1008571178560000040/1117886622827032656/JuanArk_1000_shades_of_blue_57f8cbd1-b119-4783-8880-67cbb737d61d.png?width=606&height=606" alt="image_profile">
           </div>
@@ -29,6 +28,10 @@
       <main>
         <div class="cards">
 
+        </div>
+
+        <div class="erro">
+          <h1>Movie not found 😴</h1>
         </div>
       </main>
     </div>

@@ -1,6 +1,30 @@
 const cardContainer = document.querySelector('.cards');
+const searchInput = document.querySelector('.input_container');
+const searchBtn = document.querySelector('.search_icon');
+const title = document.querySelector('.mainTitle');
 
 import { API_KEY } from "./config.js";
+
+searchInput.addEventListener('submit', searchMovie);
+searchBtn.addEventListener('click', searchMovie);
+
+async function searchMovie(e){
+    const inputMovie = document.querySelector('.input_movie').value;
+    const erroMessage  = document.querySelector('.erro');
+
+    cardContainer.innerHTML = "";
+    inputMovie === "" ? erroMessage.style.display = 'block' : erroMessage.style.display = 'none';
+
+    e.preventDefault();
+    const url = `https://api.themoviedb.org/3/search/movie?query=${inputMovie}&api_key=${API_KEY}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    const {results} =  data;
+    
+    results.forEach(result => {renderMovie(result)});
+    return data;
+
+}
 
 async function getMovies(){
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc`;
@@ -13,21 +37,23 @@ window.onload = async function(){
     const movies = await getMovies();
     const {results} = movies;
     
-    results.forEach(result =>{
-        const {title, poster_path, popularity} = result;
-        const imageMovie = `https://image.tmdb.org/t/p/w500/${poster_path}`;
-        
-        cardContainer.innerHTML += `
-        <div class="card">
-            <img class="image_card" src="${imageMovie}" alt="image-movie">
-            <div class="info">
-                <h2>${title}</h2>
-                <span class="popularity">${formatNumber(popularity)} Views</span>
-            </div>
+    results.forEach(result =>{renderMovie(result)})
+}
+
+function renderMovie(movie){
+    const {title, poster_path, popularity} = movie;
+    const imageMovie = `https://image.tmdb.org/t/p/w500/${poster_path}`;
+    
+    cardContainer.innerHTML += `
+    <div class="card">
+        <img class="image_card" src="${imageMovie}" alt="image-movie">
+        <div class="info">
+            <h2>${title}</h2>
+            <span class="popularity">${formatNumber(popularity)} Views</span>
         </div>
-       
-        `
-    })
+    </div>
+   
+    `
 }
 
 function formatNumber(popularity){

@@ -33,6 +33,7 @@ body {
 
         h1 {
             color: var(--white);
+            cursor: pointer;
         }
 
         nav {
@@ -60,6 +61,7 @@ body {
                     position: absolute;
                     right: 3%;
                     top: 20%;
+                    cursor: pointer;
                 }
             }   
             .user_profile{
@@ -104,7 +106,6 @@ body {
                 @include background($border: 1px solid rgba( 255, 255, 255, 0.18 ));
                 height: 10rem;
                 width: 30rem;
-                flex: 1 1 150px;
                 position: relative;
                 display: flex;
                 align-items: center;
@@ -130,6 +131,7 @@ body {
                 h2{
                     font-weight: 600;
                     letter-spacing: 4px;
+                    text-shadow: 0 0px  8px var(--white);
                 }
                 .popularity{
                     color:rgba(255, 255, 255, 0.34);
@@ -154,6 +156,18 @@ body {
             .card:hover::after{
                 opacity: 1;
                 
+            }
+        }
+        .erro{
+            display: none;
+            h1{
+                
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: var(--white);
+                font-size: 2rem;
             }
         }
     }
