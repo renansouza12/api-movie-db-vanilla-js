@@ -10,21 +10,34 @@ async function getMovies(){
 }
 window.onload = async function(){
     const movies = await getMovies();
-
     const {results} = movies;
     
     results.forEach(result =>{
-        const {title, poster_path} = result;
+        const {title, poster_path, popularity} = result;
         const imageMovie = `https://image.tmdb.org/t/p/w500/${poster_path}`;
-
+        
         cardContainer.innerHTML += `
         <div class="card">
             <img class="image_card" src="${imageMovie}" alt="image-movie">
             <div class="info">
                 <h2>${title}</h2>
-                <span class="popularity">2M</span>
+                <span class="popularity">${formatNumber(popularity)} Views</span>
             </div>
       </div>
         `
     })
 }
+
+function formatNumber(popularity){
+    const numberViews = popularity.toString().replace(/\./g, "");
+    
+    if( numberViews >= 1000000){
+        return (numberViews / 1000000).toFixed(2) + 'M';
+    }else if(numberViews >= 1000){
+        return (numberViews / 1000).toFixed(0) + 'K';
+    }
+    else{
+        return numberViews.toString();
+    }
+}
+
