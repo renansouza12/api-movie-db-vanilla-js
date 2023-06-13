@@ -98,9 +98,8 @@ body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             gap: 2rem;
-
+            padding: 1rem 0;
             .card{
                 @include background($border: 1px solid rgba( 255, 255, 255, 0.18 ));
                 height: 10rem;
