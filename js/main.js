@@ -24,7 +24,6 @@ async function searchMovie(e){
     const url = `https://api.themoviedb.org/3/search/movie?query=${inputMovie}&api_key=${API_KEY}`;
     const response = await fetch(url);
         const data = await response.json();
-        console.log(data);
         const {results} =  data;
         results.forEach(result => {renderMovie(result)});
         return data;
