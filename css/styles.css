@@ -28,6 +28,10 @@ body {
 .container header h1 {
   color: var(--white);
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.container header h1:hover {
+  scale: 0.9;
 }
 .container header nav {
   display: flex;

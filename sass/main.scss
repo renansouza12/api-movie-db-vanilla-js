@@ -34,8 +34,12 @@ body {
         h1 {
             color: var(--white);
             cursor: pointer;
+            transition: all 0.2s ease-in-out;
         }
-
+        h1:hover{
+            scale: 0.9;
+            
+        }
         nav {
             display: flex;
             align-items: center;
@@ -186,4 +190,6 @@ body {
         border-radius: 40%;
         z-index: 1;   
     }
+
+   
 }

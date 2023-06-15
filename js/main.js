@@ -1,12 +1,17 @@
 const cardContainer = document.querySelector('.cards');
 const searchInput = document.querySelector('.input_container');
 const searchBtn = document.querySelector('.search_icon');
+const title = document.querySelector('.mainTitle');
 
 import { API_KEY } from "./config.js";
 
 searchInput.addEventListener('submit', searchMovie);
 searchBtn.addEventListener('click', searchMovie);
+title.addEventListener('click',homeScreen);
 
+function homeScreen(){
+    location.reload();
+}
 
 async function searchMovie(e){
     const inputMovie = document.querySelector('.input_movie').value;
