@@ -26,8 +26,7 @@ async function searchMovie(e){
         const data = await response.json();
         const {results} =  data;
         results.forEach(result => {renderMovie(result)});
-        return data;
-  
+        return data; 
 }
 
 async function getMovies(){
