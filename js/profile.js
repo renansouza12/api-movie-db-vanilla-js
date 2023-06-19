@@ -21,9 +21,17 @@ function closeProfile(e){
 
 function changeImage(){
     const url = URL.createObjectURL(inputFile.files[0]);
-    profileImage.src = url;
-    imageUser.src  = url ;
+    localStorage.setItem('imageSrc',url);
+    rendeImage();
 }
+function rendeImage(){
+    const imageDefault = 'https://media.discordapp.net/attachments/1008571178560000040/1117886622827032656/JuanArk_1000_shades_of_blue_57f8cbd1-b119-4783-8880-67cbb737d61d.png?width=606&height=606';
+
+    const imageUrl = localStorage.getItem('imageSrc');
+    profileImage.src = imageUrl ?? imageDefault;
+    imageUser.src = imageUrl ?? imageDefault;
+}
+rendeImage();
 
 function changeOption(){
     btnEdit.style.display = "none"; 
