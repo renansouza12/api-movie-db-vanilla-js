@@ -3,11 +3,13 @@ const searchInput = document.querySelector('.input_container');
 const searchBtn = document.querySelector('.search_icon');
 const title = document.querySelector('.mainTitle');
 
+
 import { API_KEY } from "./config.js";
 
 searchInput.addEventListener('submit', searchMovie);
 searchBtn.addEventListener('click', searchMovie);
 title.addEventListener('click',homeScreen);
+
 
 function homeScreen(){
     location.reload();
@@ -61,7 +63,29 @@ function renderMovie(movie){
     </div>
    
     `
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => card.addEventListener('click',cardInformation));
+
+
 }
+
+function cardInformation(e){
+    const target = e.target;
+
+    if(target.classList.contains('card')){
+        this.classList.add('active')
+        
+    }else if(!target.classList.contains('card')){
+        this.classList.add('active')
+        if(!target.parentNode.classList.contains('card')){
+            this.classList.add('active')
+        }
+    }
+    
+}
+
+
+
 
 function formatNumber(popularity){
     const numberViews = popularity.toString().replace(/\./g, "");

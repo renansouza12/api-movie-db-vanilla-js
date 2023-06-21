@@ -226,7 +226,7 @@ body {
                 transition: 0.5s ease-in-out;
                 position: relative;
                 z-index: 1;
-
+                user-select: none;
                .image_card{ 
                 height: 9rem;
                 width: auto;
@@ -270,6 +270,7 @@ body {
                 opacity: 1;
                 
             }
+         
         }
         .erro{
             display: none;
