@@ -2,7 +2,7 @@ const cardContainer = document.querySelector('.cards');
 const searchInput = document.querySelector('.input_container');
 const searchBtn = document.querySelector('.search_icon');
 const title = document.querySelector('.mainTitle');
-
+const cardAbout = document.querySelector('.card_about');
 
 import { API_KEY } from "./config.js";
 
@@ -45,7 +45,7 @@ window.onload = async function(){
 }
 
 function renderMovie(movie){
-    const {title, poster_path, popularity} = movie;
+    const {title, poster_path, popularity, overview} = movie;
     let  imageMovie = `https://image.tmdb.org/t/p/w500/${poster_path}`;
 
     if(!poster_path){
@@ -59,6 +59,7 @@ function renderMovie(movie){
         <div class="info">
             <h2>${title}</h2>
             <span class="popularity">${formatNumber(popularity)} Views</span>
+            <p class="description">${overview}</p>
         </div>
     </div>
    
@@ -66,25 +67,12 @@ function renderMovie(movie){
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => card.addEventListener('click',cardInformation));
 
-
 }
 
-function cardInformation(e){
-    const target = e.target;
-
-    if(target.classList.contains('card')){
-        this.classList.add('active')
-        
-    }else if(!target.classList.contains('card')){
-        this.classList.add('active')
-        if(!target.parentNode.classList.contains('card')){
-            this.classList.add('active')
-        }
-    }
-    
+function cardInformation(){
+    cardAbout.style.display = "flex";
+    cardAbout.innerHTML = this.innerHTML;
 }
-
-
 
 
 function formatNumber(popularity){

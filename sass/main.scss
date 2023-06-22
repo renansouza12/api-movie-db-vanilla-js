@@ -217,9 +217,7 @@ body {
             padding: 1rem 0;
             .card{
                 @include background($border: 1px solid rgba( 255, 255, 255, 0.18 ));
-                height: 10rem;
                 width: 30rem;
-                position: relative;
                 display: flex;
                 align-items: center;
                 padding: 1rem;
@@ -249,6 +247,9 @@ body {
                 .popularity{
                     color:rgba(255, 255, 255, 0.34);
                 }
+                .description{
+                    display: none;
+                }
                }
             }
             .card::after{
@@ -270,7 +271,55 @@ body {
                 opacity: 1;
                 
             }
+            .card.active{
+                height: 20rem;  
+            }
          
+        }
+        .card_about{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 43rem;
+            height: 30rem;
+            @include background();
+            z-index: 3;
+            padding: 1rem; 
+            display: none;
+            gap: 2rem;
+            overflow: hidden;
+
+            .image_card{
+                width: 20rem;
+                height: 28rem;
+                object-fit: cover;
+                border: 2px solid rgba(255, 255, 255, 0.34);
+                border-radius: 4px;
+            }
+            .info{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                h2{
+                    font-size: 2rem;
+                    color: var(--white);
+                    letter-spacing: 5px;
+                }
+                .popularity{
+                    color:rgba(255, 255, 255, 0.34);
+                    font-size: 1.3rem;
+
+                }
+                .description{
+                    display: block;
+                    color: var(--white);
+                    font-weight: 600;
+                    text-align: justify;
+                    overflow-y: auto;
+                }
+               }
         }
         .erro{
             display: none;
