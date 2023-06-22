@@ -9,7 +9,7 @@ import { API_KEY } from "./config.js";
 searchInput.addEventListener('submit', searchMovie);
 searchBtn.addEventListener('click', searchMovie);
 title.addEventListener('click',homeScreen);
-
+window.addEventListener('click', closeCardInfo)
 
 function homeScreen(){
     location.reload();
@@ -55,11 +55,11 @@ function renderMovie(movie){
 
     cardContainer.innerHTML += `
     <div class="card">
-        <img class="image_card" src="${imageMovie}" alt="image-movie">
+        <img class="image_card" src="${imageMovie}" alt="image-movie" data-atropos-offset="5">
         <div class="info">
-            <h2>${title}</h2>
-            <span class="popularity">${formatNumber(popularity)} Views</span>
-            <p class="description">${overview}</p>
+            <h2 data-atropos-offset="5">${title}</h2>
+            <span class="popularity" >${formatNumber(popularity)} Views</span>
+            <p class="description" data-atropos-offset="5">${overview}</p>
         </div>
     </div>
    
@@ -69,10 +69,19 @@ function renderMovie(movie){
 
 }
 
+function closeCardInfo(e){
+    const target = e.target;
+
+    if(!cardContainer.contains(target) && !cardAbout.contains(target)){
+        cardAbout.style.display = "none";
+    }
+       
+}
 function cardInformation(){
     cardAbout.style.display = "flex";
     cardAbout.innerHTML = this.innerHTML;
 }
+
 
 
 function formatNumber(popularity){
