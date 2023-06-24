@@ -24,11 +24,14 @@ async function searchMovie(e){
     e.preventDefault();
 
     const url = `https://api.themoviedb.org/3/search/movie?query=${inputMovie}&api_key=${API_KEY}`;
-    const response = await fetch(url);
+        const response = await fetch(url);
         const data = await response.json();
         const {results} =  data;
-        results.forEach(result => {renderMovie(result)});
-        return data; 
+        if(results.length > 0){
+            results.forEach(result => {renderMovie(result)});
+            return data; 
+        }   
+        erroMessage.style.display = 'block';
 }
 
 async function getMovies(){
