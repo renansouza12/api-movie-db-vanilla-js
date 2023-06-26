@@ -9,7 +9,7 @@
 :root {
   --white: #ffffff;
   --bg-color: #0f0e17;
-  --button-color:#7f5af0;
+  --button-color: #7f5af0;
 }
 
 body {
@@ -180,20 +180,8 @@ body {
   right: 2.5rem;
   transform: rotate(47deg);
 }
-.container header::after {
-  position: absolute;
-  content: "";
-  bottom: -1rem;
-  height: 1.7rem;
-  width: 80%;
-  background-color: var(--bg-color);
-  border-radius: 70%;
-  filter: blur(3px);
-  opacity: 0.9;
-  z-index: 100;
-}
 .container main {
-  height: 90vh;
+  height: 91vh;
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -219,6 +207,9 @@ body {
   position: relative;
   z-index: 1;
   user-select: none;
+}
+.container main .cards .card .icon_closeCard {
+  display: none;
 }
 .container main .cards .card .image_card {
   height: 9rem;
@@ -284,6 +275,17 @@ body {
   overflow: hidden;
   animation: card 0.5s forwards;
 }
+.container main .atropos .card_about .icon_closeCard {
+  position: absolute;
+  top: 0%;
+  right: 1%;
+  cursor: pointer;
+  z-index: 1;
+}
+.container main .atropos .card_about .icon_closeCard svg {
+  color: var(--white);
+  width: 2rem;
+}
 .container main .atropos .card_about .image_card {
   width: 20rem;
   height: 28rem;
@@ -327,18 +329,6 @@ body {
 .container main::-webkit-scrollbar {
   width: 0px;
 }
-.container main:after {
-  position: absolute;
-  content: "";
-  bottom: -16px;
-  height: 2rem;
-  width: 90%;
-  background-color: var(--bg-color);
-  filter: blur(5px);
-  opacity: 0.9;
-  border-radius: 40%;
-  z-index: 1;
-}
 @keyframes card {
   0% {
     opacity: 0;
@@ -348,6 +338,58 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container header {
+    align-items: center;
+    padding: 1rem;
+  }
+  .container header .mainTitle {
+    font-size: 1.5rem;
+  }
+  .container header nav {
+    gap: 0.5rem;
+  }
+  .container header nav .input_container input {
+    width: 10rem;
+  }
+  .container header nav .input_container input::placeholder {
+    font-size: 0.9rem;
+  }
+  .container header nav .input_container .search_icon {
+    width: 1rem;
+  }
+  .container main {
+    max-height: 95vh;
+  }
+  .container main .cards .card {
+    width: 25rem;
+  }
+  .container main .atropos {
+    width: 90%;
+    top: 50%;
+  }
+  .container main .atropos .card_about {
+    display: none;
+    flex-direction: column;
+    height: auto;
+    gap: 1rem;
+    user-select: none;
+  }
+  .container main .atropos .card_about .image_card {
+    width: 100%;
+    object-fit: fill;
+  }
+  .container main .atropos .card_about .info {
+    align-items: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container main .atropos .card_about {
+    height: 90vh;
+    width: 100%;
   }
 }
 
