@@ -312,18 +312,6 @@ body {
                 overflow: hidden;
                 animation: card .5s forwards;
 
-                .icon_closeCard{
-                    position: absolute;
-                    top: 0%;
-                    right: 1%;
-                    cursor: pointer;  
-                    z-index: 1;
-                    svg{
-                        color: var(--white);
-                        width: 2rem;
-                        
-                    }
-                }
                 .image_card {
                     width: 20rem;
                     height: 28rem;
@@ -357,15 +345,27 @@ body {
                         text-align: justify;
                         overflow-y: auto;
                     }
+                    .description::-webkit-scrollbar {
+                        width: 5px; 
+                        
+                    }
+                    .description::-webkit-scrollbar-track {
+                        background: #242424; 
+                    }
+                    .description::-webkit-scrollbar-thumb {
+                        background: #888; 
+                        border-radius: 1rem;
+                    }
+                      
                 }
             }
+           
         }
 
         .erro {
             display: none;
 
             h1 {
-
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -433,17 +433,29 @@ body {
                 .card_about{
                     display: none;
                     flex-direction: column;
+                    align-items: center;
                     height: auto;
                     gap: 1rem; 
                     user-select: none;
+                    overflow: hidden;
+                    overflow-y: auto;
                     .image_card{
-                        width: 100%;
+                        
+                        width: 50%;
+                        height: auto;
                         object-fit: fill;
                     }
                     .info{
                         align-items: center;
+
+                        h2{
+                            font-size: 1.2rem;
+                            text-align: center;
+                        }
                     }
                 }
+               
+                  
             }
            
         }
@@ -454,7 +466,7 @@ body {
         main{
             .atropos{
                 .card_about{
-                    height: 90vh;
+                    height: 80vh;
                     width: 100%;
                 }
             }

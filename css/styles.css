@@ -275,17 +275,6 @@ body {
   overflow: hidden;
   animation: card 0.5s forwards;
 }
-.container main .atropos .card_about .icon_closeCard {
-  position: absolute;
-  top: 0%;
-  right: 1%;
-  cursor: pointer;
-  z-index: 1;
-}
-.container main .atropos .card_about .icon_closeCard svg {
-  color: var(--white);
-  width: 2rem;
-}
 .container main .atropos .card_about .image_card {
   width: 20rem;
   height: 28rem;
@@ -314,6 +303,16 @@ body {
   font-weight: 600;
   text-align: justify;
   overflow-y: auto;
+}
+.container main .atropos .card_about .info .description::-webkit-scrollbar {
+  width: 5px;
+}
+.container main .atropos .card_about .info .description::-webkit-scrollbar-track {
+  background: #242424;
+}
+.container main .atropos .card_about .info .description::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 1rem;
 }
 .container main .erro {
   display: none;
@@ -374,21 +373,29 @@ body {
   .container main .atropos .card_about {
     display: none;
     flex-direction: column;
+    align-items: center;
     height: auto;
     gap: 1rem;
     user-select: none;
+    overflow: hidden;
+    overflow-y: auto;
   }
   .container main .atropos .card_about .image_card {
-    width: 100%;
+    width: 50%;
+    height: auto;
     object-fit: fill;
   }
   .container main .atropos .card_about .info {
     align-items: center;
   }
+  .container main .atropos .card_about .info h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
 }
 @media screen and (max-width: 768px) {
   .container main .atropos .card_about {
-    height: 90vh;
+    height: 80vh;
     width: 100%;
   }
 }
