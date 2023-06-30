@@ -295,71 +295,67 @@ body {
 
         }
 
-        .atropos {
+        .card_about {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 3;
+            width: 43rem;
+            height: 30rem;
+            @include background();
+            padding: 1rem;
+            display: none;
+            gap: 2rem;
+            overflow: hidden;
+            z-index: 1;
+            animation: card .5s forwards;
 
-            .card_about {
-                width: 43rem;
-                height: 30rem;
-                @include background();
-                padding: 1rem;
-                display: none;
-                gap: 2rem;
-                overflow: hidden;
-                animation: card .5s forwards;
-
-                .image_card {
-                    width: 20rem;
-                    height: 28rem;
-                    object-fit: cover;
-                    border: 2px solid rgba(255, 255, 255, 0.34);
-                    border-radius: 4px;
-                    box-shadow: 0 4px 4px rgba(255, 255, 255, 0.34);
-                }
-
-                .info {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1rem;
-
-                    h2 {
-                        font-size: 2rem;
-                        color: var(--white);
-                        letter-spacing: 5px;
-                    }
-
-                    .popularity {
-                        color: rgba(255, 255, 255, 0.34);
-                        font-size: 1.3rem;
-
-                    }
-
-                    .description {
-                        display: block;
-                        color: var(--white);
-                        font-weight: 600;
-                        text-align: justify;
-                        overflow-y: auto;
-                    }
-                    .description::-webkit-scrollbar {
-                        width: 5px; 
-                        
-                    }
-                    .description::-webkit-scrollbar-track {
-                        background: #242424; 
-                    }
-                    .description::-webkit-scrollbar-thumb {
-                        background: #888; 
-                        border-radius: 1rem;
-                    }
-                      
-                }
+            .image_card {
+                width: 20rem;
+                height: 28rem;
+                object-fit: cover;
+                border: 2px solid rgba(255, 255, 255, 0.34);
+                border-radius: 4px;
+                box-shadow: 0 4px 4px rgba(255, 255, 255, 0.34);
             }
-           
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                h2 {
+                    font-size: 2rem;
+                    color: var(--white);
+                    letter-spacing: 5px;
+                }
+
+                .popularity {
+                    color: rgba(255, 255, 255, 0.34);
+                    font-size: 1.3rem;
+
+                }
+
+                .description {
+                    display: block;
+                    color: var(--white);
+                    font-weight: 600;
+                    text-align: justify;
+                    overflow-y: auto;
+                }
+                .description::-webkit-scrollbar {
+                    width: 5px; 
+                    
+                }
+                .description::-webkit-scrollbar-track {
+                    background: #242424; 
+                }
+                .description::-webkit-scrollbar-thumb {
+                    background: #888; 
+                    border-radius: 1rem;
+                }
+                  
+            }
         }
 
         .erro {

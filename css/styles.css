@@ -256,14 +256,11 @@ body {
 .container main .cards .card.active {
   height: 20rem;
 }
-.container main .atropos {
+.container main .card_about {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3;
-}
-.container main .atropos .card_about {
   width: 43rem;
   height: 30rem;
   background: rgba(255, 255, 255, 0.15);
@@ -274,9 +271,10 @@ body {
   display: none;
   gap: 2rem;
   overflow: hidden;
+  z-index: 1;
   animation: card 0.5s forwards;
 }
-.container main .atropos .card_about .image_card {
+.container main .card_about .image_card {
   width: 20rem;
   height: 28rem;
   object-fit: cover;
@@ -284,34 +282,34 @@ body {
   border-radius: 4px;
   box-shadow: 0 4px 4px rgba(255, 255, 255, 0.34);
 }
-.container main .atropos .card_about .info {
+.container main .card_about .info {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.container main .atropos .card_about .info h2 {
+.container main .card_about .info h2 {
   font-size: 2rem;
   color: var(--white);
   letter-spacing: 5px;
 }
-.container main .atropos .card_about .info .popularity {
+.container main .card_about .info .popularity {
   color: rgba(255, 255, 255, 0.34);
   font-size: 1.3rem;
 }
-.container main .atropos .card_about .info .description {
+.container main .card_about .info .description {
   display: block;
   color: var(--white);
   font-weight: 600;
   text-align: justify;
   overflow-y: auto;
 }
-.container main .atropos .card_about .info .description::-webkit-scrollbar {
+.container main .card_about .info .description::-webkit-scrollbar {
   width: 5px;
 }
-.container main .atropos .card_about .info .description::-webkit-scrollbar-track {
+.container main .card_about .info .description::-webkit-scrollbar-track {
   background: #242424;
 }
-.container main .atropos .card_about .info .description::-webkit-scrollbar-thumb {
+.container main .card_about .info .description::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 1rem;
 }
